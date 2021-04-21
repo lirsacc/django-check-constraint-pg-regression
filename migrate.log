@@ -2,10 +2,10 @@ Operations to perform:
   Apply all migrations: prices
 Running migrations:
   Applying prices.0001_initial...Traceback (most recent call last):
-  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/backends/utils.py", line 86, in _execute
     return self.cursor.execute(sql, params)
 psycopg2.errors.SyntaxError: syntax error at or near "<"
-LINE 1: ...TRAINT "on_sale_check" CHECK ("on_sale" = "price" < "price_p...
+LINE 1: ..._check" CHECK ("on_sale" = "prices_price"."price" < "prices_...
                                                              ^
 
 
@@ -20,40 +20,40 @@ Traceback (most recent call last):
     utility.execute()
   File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/core/management/__init__.py", line 395, in execute
     self.fetch_command(subcommand).run_from_argv(self.argv)
-  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/core/management/base.py", line 330, in run_from_argv
+  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/core/management/base.py", line 328, in run_from_argv
     self.execute(*args, **cmd_options)
-  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/core/management/base.py", line 371, in execute
+  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/core/management/base.py", line 369, in execute
     output = self.handle(*args, **options)
-  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/core/management/base.py", line 85, in wrapped
+  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/core/management/base.py", line 83, in wrapped
     res = handle_func(*args, **kwargs)
-  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/core/management/commands/migrate.py", line 245, in handle
+  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/core/management/commands/migrate.py", line 233, in handle
     fake_initial=fake_initial,
   File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/migrations/executor.py", line 117, in migrate
     state = self._migrate_all_forwards(state, plan, full_plan, fake=fake, fake_initial=fake_initial)
   File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/migrations/executor.py", line 147, in _migrate_all_forwards
     state = self.apply_migration(state, migration, fake=fake, fake_initial=fake_initial)
-  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/migrations/executor.py", line 227, in apply_migration
+  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/migrations/executor.py", line 245, in apply_migration
     state = migration.apply(state, schema_editor)
   File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/migrations/migration.py", line 124, in apply
     operation.database_forwards(self.app_label, schema_editor, old_state, project_state)
-  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/migrations/operations/models.py", line 808, in database_forwards
+  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/migrations/operations/models.py", line 822, in database_forwards
     schema_editor.add_constraint(model, self.constraint)
   File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/backends/base/schema.py", line 362, in add_constraint
     self.execute(sql)
   File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/backends/base/schema.py", line 142, in execute
     cursor.execute(sql, params)
-  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/backends/utils.py", line 98, in execute
+  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/backends/utils.py", line 100, in execute
     return super().execute(sql, params)
-  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/backends/utils.py", line 66, in execute
+  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/backends/utils.py", line 68, in execute
     return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
-  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
     return executor(sql, params, many, context)
-  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/backends/utils.py", line 86, in _execute
     return self.cursor.execute(sql, params)
   File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/utils.py", line 90, in __exit__
     raise dj_exc_value.with_traceback(traceback) from exc_value
-  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+  File "/Users/charles/.pyenv/versions/3.7-dev/envs/django-pg-regression-test/lib/python3.7/site-packages/django/db/backends/utils.py", line 86, in _execute
     return self.cursor.execute(sql, params)
 django.db.utils.ProgrammingError: syntax error at or near "<"
-LINE 1: ...TRAINT "on_sale_check" CHECK ("on_sale" = "price" < "price_p...
+LINE 1: ..._check" CHECK ("on_sale" = "prices_price"."price" < "prices_...
                                                              ^
