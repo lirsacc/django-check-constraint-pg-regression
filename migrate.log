@@ -1,0 +1,4 @@
+Operations to perform:
+  Apply all migrations: prices
+Running migrations:
+  Applying prices.0001_initial... OK
