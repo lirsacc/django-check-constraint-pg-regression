@@ -9,12 +9,7 @@ class Price(models.Model):
     class Meta:
         constraints = (
             models.CheckConstraint(
-                check=models.Q(
-                    on_sale=models.ExpressionWrapper(
-                        models.Q(price__lt=models.F('price_previous')),
-                        output_field=models.BooleanField(),
-                    ),
-                ),
+                check=models.Q(on_sale=models.Q(price__lt=models.F('price_previous'))),
                 name='on_sale_check',
             ),
             models.CheckConstraint(
