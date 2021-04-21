@@ -78,10 +78,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'regression_test',
-        'USER': 'charles',
+        'USER': '',
         'PASSWORD': '',
         'HOST': 'localhost',
-        'PORT': '5832',
+        'PORT': '5432',
     }
 }
 
